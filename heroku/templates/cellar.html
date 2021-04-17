@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <table class="table table-dark">
+            <thead>
+                <th scope="col">Production Date</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Description</th>
+                <th scope="col">Storage Date</th>
+                <th scope="col">Action</th>
+            </thead>
+            <tbody>
+                {% for bottle in bottles %}
+                <tr>
+                    <td>{{ bottle.year_produced }}</td>
+                    <td>{{ bottle.brand }}</td>
+                    <td>{{ bottle.description }}</td>
+                    <td>{{ bottle.storage_date }}</td>
+                    <td><a class="badge badge-pill badge-primary" href="{% url 'edit-bottle-view' bottle.id %}">Edit</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}
