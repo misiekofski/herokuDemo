@@ -8,6 +8,7 @@
                 <th scope="col">Description</th>
                 <th scope="col">Storage Date</th>
                 <th scope="col">Action</th>
+                <th scope="col">Rating</th>
             </thead>
             <tbody>
                 {% for bottle in bottles %}
@@ -17,6 +18,7 @@
                     <td>{{ bottle.description }}</td>
                     <td>{{ bottle.storage_date }}</td>
                     <td><a class="badge badge-pill badge-primary" href="{% url 'edit-bottle-view' bottle.id %}">Edit</a></td>
+                    <td>Pińć gwiazdek</td>
                 </tr>
                 {% endfor %}
             </tbody>
